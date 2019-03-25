@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 import HomeworkItem from '../components/home/HomeworkItem'
 
-class HomeScreen extends React.Component {
+class HomeworkScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'Homework',
   };
 
   _onPressItem = (id) => {
@@ -73,7 +73,7 @@ const mapStateToProps = (state) => ({
   loading: state.get('task').get('loading')
 })
 
-export default connect(mapStateToProps, {})(HomeScreen);
+export default connect(mapStateToProps, {})(HomeworkScreen);
 
 const styles = StyleSheet.create({
   container: {
