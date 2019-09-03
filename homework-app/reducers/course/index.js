@@ -1,8 +1,8 @@
 import Immutable from 'immutable';
-import { SET_NAME_FORM, SET_COLOR_FORM, CREATE_COURSE } from '../../actions/course';
+import { SET_NAME_FORM, SET_COLOR_FORM, CREATE_COURSE, RESTART_CREATED } from '../../actions/course'
 
 const initialState = Immutable.fromJS({
-  courses: [],
+  courses: [{name: 'Cloud Computing', color: '#E82C0C'}],
   courseForm:{
     name: '',
     color: '#E82C0C'
@@ -21,13 +21,15 @@ export default (state = initialState, action) => {
       const name = state.get('courseForm').get('name');
       const color = state.get('courseForm').get('color');
       //store course
-      const course = {name: name, color: color};
+      const course = {name: name, color: color, id: Math.random()};
       courses.push(course)
       return state
-        .set('courses', course)
+        .set('courses', courses)
         .set('created', true)
         .setIn(['courseForm', 'name'], '')
         .setIn([['courseForm', 'color'], '#E82C0C']);
+    case RESTART_CREATED:
+      return state.set('created', false);
     default:
       return state;
   }

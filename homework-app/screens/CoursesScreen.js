@@ -31,11 +31,9 @@ class CoursesScreen extends React.Component {
   }
 
   _renderItem = ({item}) => {
-    const id = Math.random();
     return (
       <CourseItem
         item={item}
-        key={id}
       />
     );
   }
@@ -46,9 +44,14 @@ class CoursesScreen extends React.Component {
         <FlatList
           data={courses}
           renderItem={this._renderItem}
+          keyExtractor={this._keyExtractor}
         />
       </View>
     );
+  }
+
+  _keyExtractor = (item, index) => {
+    return item.id;
   }
 
   render() {
@@ -68,7 +71,6 @@ const mapStateToProps = (state) => ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15,
     backgroundColor: '#fff',
     justifyContent: 'center',
     borderWidth: 1,

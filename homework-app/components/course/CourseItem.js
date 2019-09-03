@@ -1,24 +1,35 @@
-import React, {Component} from 'react';
-import {TouchableOpacity, View, Text, StyleSheet} from 'react-native';
+import React, { Component } from 'react'
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native'
 
 class CourseItem extends Component {
 
   render () {
-    const {item} = this.props;
+    const {item} = this.props
     return (
-      <TouchableOpacity style={styles.container}>
-          <View style={{...styles.square, backgroundColor: item.color}}></View>
-          <Text styles={styles.text}>{item.name}</Text>
-      </TouchableOpacity>
-    );
+      <View key={item.key}>
+        <TouchableOpacity style={styles.container}>
+          <Text style={styles.name}>{item.name}</Text>
+          <View style={{...styles.circle, backgroundColor: item.color}}/>
+        </TouchableOpacity>
+      </View>
+
+
+    )
 
   }
 }
 
 const styles = StyleSheet.create({
-  container: {flex:1, flexDirection:'row', height:80},
-  square: {flex:1,width: 25, height: 25, borderRadius:50, paddingRight: 15},
-  text: {flex:4,fontSize: 22}
-});
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 10
+  },
+  name: {fontSize: 18},
+  circle: {width: 30, height: 30, borderRadius: 50}
+})
 
-export default CourseItem;
+export default CourseItem

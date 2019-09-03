@@ -2,14 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { View, StyleSheet, Picker } from 'react-native'
 import { Input, Button } from 'react-native-elements'
-import { setText, setColor , createCourse} from '../actions/course'
+import { setText, setColor , createCourse, restartCreated} from '../actions/course'
 
 class CourseCreateScreen extends React.Component {
   static navigationOptions = {
     title: 'Create Course',
   }
 
+  componentDidMount(){
+    this.props.restartCreated();
+  }
+
   componentWillReceiveProps (newProps) {
+    console.log(newProps)
     if (newProps.created && !this.props.created){
       this.props.navigation.navigate('Courses');
     }
@@ -53,7 +58,7 @@ const mapStateToProps = (state) => ({
   created: state.get('course').get('created')
 })
 
-export default connect(mapStateToProps, {setText, setColor, createCourse})(CourseCreateScreen)
+export default connect(mapStateToProps, {setText, setColor, createCourse, restartCreated})(CourseCreateScreen)
 
 const styles = StyleSheet.create({
   container: {

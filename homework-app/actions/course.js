@@ -6,6 +6,7 @@ export const CREATE_COURSE = 'create_course';
 export const FETCH_COURSES = 'fetch_courses';
 export const FETCH_COURSES_LOADING = 'fetch_courses_loading';
 export const FETCH_COURSES_ERROR = 'fetch_courses_error';
+export const RESTART_CREATED = 'restart_created';
 
 export const setText = (text) => {
   return {
@@ -18,6 +19,12 @@ export const setColor = (color) => {
   return {
     type: SET_COLOR_FORM,
     payload: color
+  }
+}
+
+export const restartCreated = () => {
+  return {
+    type:RESTART_CREATED
   }
 }
 
