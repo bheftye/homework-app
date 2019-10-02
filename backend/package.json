@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for the homework app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bheftye/homework-app.git"
+  },
+  "keywords": [
+    "homework",
+    "task",
+    "to-do",
+    "list"
+  ],
+  "author": "Brent Heftye Sanchez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bheftye/homework-app/issues"
+  },
+  "homepage": "https://github.com/bheftye/homework-app#readme",
+  "dependencies": {
+    "@types/express": "^4.17.1",
+    "express": "^4.17.1",
+    "typescript": "^3.6.3"
+  }
+}

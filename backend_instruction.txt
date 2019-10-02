@@ -1,0 +1,25 @@
+https://medium.com/javascript-in-plain-english/typescript-with-node-and-express-js-why-when-and-how-eb6bc73edd5d
+Typescript, Express & Node as backend.
+
+Install typescript
+
+Add "tsc": "tsc" to "scripts" to execute from command line
+
+Initialize typescript by calling "npm run tsc"
+
+Uncomment a line outDir and add ./build to store the transpiled TS -> JS
+
+Install dependencies
+express, @types/express (this need to be added for TS to understand Express Types)
+
+Create the app directory and add app.ts to it. (main file), build a simple app.
+
+Compile the app with
+npm run tsc
+
+A build directory will be created containing the transpiled js.
+
+Test the app by executing with node
+node build/app.js
+
+You can cUrl from console to see the functionality.
