@@ -23,3 +23,24 @@ Test the app by executing with node
 node build/app.js
 
 You can cUrl from console to see the functionality.
+
+Running TS while on development
+
+Install ts-node package
+npm install ts-node-dev -s
+
+Add two more scripts to package.json
+scripts:{
+    ...
+    "dev": "ts-node-dev --respawn --transpileOnly ./app/app.ts",
+    "prod": "tsc && node ./build/app.js"
+}
+
+For development we will transpile when a file is changed.
+For production we will only use the build of our app.
+
+Run development environment
+npm run dev
+
+Run production environment
+npm run prod
