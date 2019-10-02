@@ -8,10 +8,7 @@ export default class CreateHomeworkScreen extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text>
-          Create Homework Task!
-        </Text>
+      <View style={styles.container}>
       </View>
     );
   }
@@ -23,4 +20,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: '#fff',
   },
+  header:{
+
+  }
 });
