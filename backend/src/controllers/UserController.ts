@@ -85,7 +85,10 @@ class UserController{
             user = await userRepository.findOneOrFail(id);
         } catch (error) {
             //If not found, send a 404 response
-            res.status(404).send("User not found");
+            const resBody = {
+              message: "User not found"
+            };
+            res.status(404).send(resBody);
             return;
         }
 
@@ -94,7 +97,10 @@ class UserController{
         user.role = role;
         const errors = await validate(user);
         if (errors.length > 0) {
-            res.status(400).send(errors);
+            const resBody = {
+              errors: errors
+            };
+            res.status(400).send(resBody);
             return;
         }
 
@@ -102,11 +108,17 @@ class UserController{
         try {
             await userRepository.save(user);
         } catch (e) {
-            res.status(409).send("username already in use");
+            const resBody = {
+              message: "username already in use"
+            };
+            res.status(409).send(resBody);
             return;
         }
         //After all send a 204 (no content, but accepted) response
-        res.status(204).send();
+        const resBody = {
+          message: "Nothing to do"
+        };
+        res.status(204).send(resBody);
     };
 
     static deleteUser = async (req: Request, res: Response) => {
