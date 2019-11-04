@@ -55,12 +55,20 @@ class UserController{
         try {
             await userRepository.save(user);
         } catch (e) {
-            res.status(409).send("username already in use");
+            const resBody = {
+              result: false,
+              message: "Username already in use"
+            };
+            res.status(409).send(resBody);
             return;
         }
 
         //If all ok, send 201 response
-        res.status(201).send("User created");
+        const resBody = {
+          result: true,
+          message: "User created"
+        };
+        res.status(201).send(resBody);
     };
 
     static editUser = async (req: Request, res: Response) => {
