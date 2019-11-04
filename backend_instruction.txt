@@ -44,3 +44,22 @@ npm run dev
 
 Run production environment
 npm run prod
+
+*******************************************************************
+
+https://medium.com/javascript-in-plain-english/creating-a-rest-api-with-jwt-authentication-and-role-based-authorization-using-typescript-fbfa3cab22a4
+Configure TypeORM & MySQL
+
+You can install typeORM as global to use a CLI command that will create everything we need
+done before.
+
+./route/to/typeorm init --name project-name --database sqlite --express
+
+npm install
+
+Install dependencies if project was already initialized.
+npm install -s helmet cors jsonwebtoken bcryptjs class-validator ts-node-dev
+
+Install dependencies to types since we are using TypeScript.
+npm install -s @types/bcryptjs @types/body-parser @types/cors @types/helmet @types/jsonwebtoken
+
