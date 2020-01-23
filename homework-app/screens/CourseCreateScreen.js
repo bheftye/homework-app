@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { View, StyleSheet, Picker } from 'react-native'
-import { Input, Button } from 'react-native-elements'
+import { View, StyleSheet, Picker, TextInput, Button } from 'react-native'
 import { setText, setColor , createCourse, restartCreated} from '../actions/course'
 
 class CourseCreateScreen extends React.Component {
@@ -24,7 +23,7 @@ class CourseCreateScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.subContainerForm}>
-          <Input
+          <TextInput
             value={this.props.name}
             style={styles.text}
             placeholder='Course Name'

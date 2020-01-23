@@ -1,18 +1,19 @@
 {
   "expo": {
-    "name": "Homework App",
-    "slug": "homework-app",
+    "name": "HomeWork App",
+    "slug": "homework_app",
     "privacy": "public",
-    "sdkVersion": "34.0.0",
+    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "web"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,7 +25,6 @@
     ],
     "ios": {
       "supportsTablet": true
-    },
-    "description": ""
+    }
   }
 }
